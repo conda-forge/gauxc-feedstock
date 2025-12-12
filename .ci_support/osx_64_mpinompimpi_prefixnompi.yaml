@@ -29,7 +29,7 @@ mpi_prefix:
 mpich:
 - '4'
 openmpi:
-- '4'
+- '5'
 target_platform:
 - osx-64
 zip_keys:
