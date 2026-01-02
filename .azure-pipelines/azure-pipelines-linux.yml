@@ -20,6 +20,30 @@ jobs:
         CONFIG: linux_64_mpiopenmpimpi_prefixmpi_openmpi
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_mpimpichmpi_prefixmpi_mpich:
+        CONFIG: linux_aarch64_mpimpichmpi_prefixmpi_mpich
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_mpinompimpi_prefixnompi:
+        CONFIG: linux_aarch64_mpinompimpi_prefixnompi
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_mpiopenmpimpi_prefixmpi_openmpi:
+        CONFIG: linux_aarch64_mpiopenmpimpi_prefixmpi_openmpi
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_ppc64le_mpimpichmpi_prefixmpi_mpich:
+        CONFIG: linux_ppc64le_mpimpichmpi_prefixmpi_mpich
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_ppc64le_mpinompimpi_prefixnompi:
+        CONFIG: linux_ppc64le_mpinompimpi_prefixnompi
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_ppc64le_mpiopenmpimpi_prefixmpi_openmpi:
+        CONFIG: linux_ppc64le_mpiopenmpimpi_prefixmpi_openmpi
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
   timeoutInMinutes: 360
   variables: {}
 
