@@ -30,6 +30,8 @@ mpich:
 - '4'
 openmpi:
 - '5'
+pytorch:
+- '2.7'
 target_platform:
 - osx-64
 zip_keys:
