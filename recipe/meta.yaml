@@ -23,6 +23,8 @@ source:
 build:
   number: {{ build }}
   skip: true  # [win]
+  skip: true  # [osx and x86_64]
+  skip: true  # [linux and ppc64le]
 
   string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
 
