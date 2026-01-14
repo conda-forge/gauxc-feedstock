@@ -86,14 +86,14 @@ Current release info
 Installing gauxc
 ================
 
-Installing `gauxc` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `gauxc` from the `conda-forge/label/gauxc_skala` channel can be achieved by adding `conda-forge/label/gauxc_skala` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/gauxc_skala
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gauxc` can be installed with `conda`:
+Once the `conda-forge/label/gauxc_skala` channel has been enabled, `gauxc` can be installed with `conda`:
 
 ```
 conda install gauxc
@@ -108,26 +108,26 @@ mamba install gauxc
 It is possible to list all of the versions of `gauxc` available on your platform with `conda`:
 
 ```
-conda search gauxc --channel conda-forge
+conda search gauxc --channel conda-forge/label/gauxc_skala
 ```
 
 or with `mamba`:
 
 ```
-mamba search gauxc --channel conda-forge
+mamba search gauxc --channel conda-forge/label/gauxc_skala
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search gauxc --channel conda-forge
+mamba repoquery search gauxc --channel conda-forge/label/gauxc_skala
 
 # List packages depending on `gauxc`:
-mamba repoquery whoneeds gauxc --channel conda-forge
+mamba repoquery whoneeds gauxc --channel conda-forge/label/gauxc_skala
 
 # List dependencies of `gauxc`:
-mamba repoquery depends gauxc --channel conda-forge
+mamba repoquery depends gauxc --channel conda-forge/label/gauxc_skala
 ```
 
 
