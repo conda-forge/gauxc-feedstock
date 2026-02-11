@@ -36,6 +36,7 @@ requirements:
     - ninja
     - llvm-openmp  # [osx]
   host:
+    - catch2
     - exchcxx >=1.0,<2
     - gau2grid >=2.0.6,<3
     - hdf5 * {{ mpi_prefix }}_*
