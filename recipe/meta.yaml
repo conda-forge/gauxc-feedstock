@@ -1,10 +1,10 @@
 {% set version = "1.1" %}
-{% set build = 3 %}
+{% set build = 4 %}
 {% set mpi = mpi or "nompi" %}
 
 package:
   name: gauxc
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   - url: https://github.com/wavefunction91/gauxc/archive/refs/tags/v{{ version }}.tar.gz
@@ -22,10 +22,13 @@ build:
   number: {{ build }}
   skip: true  # [win]
 
-  string: {{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}
+  string: cuda{{ cuda_compiler_version | replace('.', '') }}_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version != "None"]
+  string: cpu_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version == "None"]
 
   run_exports:
-    - {{ pin_subpackage("gauxc", max_pin='x.x') }} {{ mpi_prefix }}_*
+    - {{ pin_subpackage("gauxc", max_pin='x.x') }} *_{{ mpi_prefix }}_*
+    - {{ pin_subpackage("gauxc", max_pin='x.x') }} cuda{{ cuda_compiler_version | replace('.', '') }}_*  # [cuda_compiler_version != "None"]
+    - {{ pin_subpackage("gauxc", max_pin='x.x') }} cpu_*  # [cuda_compiler_version == "None"]
   ignore_run_exports:
     - catch2
 
@@ -33,12 +36,16 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
     - {{ stdlib('c') }}
     - cmake >3.20,<4
     - ninja
     - llvm-openmp  # [osx]
+    - pkg-config
   host:
-    - exchcxx >=1.0,<2
+    - cuda-version {{ cuda_compiler_version }}  # [cuda_compiler_version != "None"]
+    - exchcxx >=1.0,<2 cpu_*  # [cuda_compiler_version == "None"]
+    - exchcxx >=1.0,<2 cuda{{ cuda_compiler_version | replace('.', '') }}_*  # [cuda_compiler_version != "None"]
     - gau2grid >=2.0.6,<3
     - hdf5 * {{ mpi_prefix }}_*
     - highfive >=2.4.1,<3
@@ -46,10 +53,13 @@ requirements:
     - libblas  # [linux]
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
+    - magma          # [cuda_compiler_version != "None"]
+    - libcublas-dev  # [cuda_compiler_version != "None"]
     - {{ mpi }}  # [mpi != "nompi"]
   run:
     - llvm-openmp  # [osx]
     - {{ mpi }}  # [mpi != "nompi"]
+    - __cuda  # [cuda_compiler_version != "None"]
 
 test:
   commands:

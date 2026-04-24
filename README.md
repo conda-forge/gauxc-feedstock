@@ -27,45 +27,87 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_mpimpichmpi_prefixmpi_mpich</td>
+              <td>linux_64_cuda_compiler_version12.9mpimpichmpi_prefixmpi_mpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpimpichmpi_prefixmpi_mpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_version12.9mpimpichmpi_prefixmpi_mpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_mpinompimpi_prefixnompi</td>
+              <td>linux_64_cuda_compiler_version12.9mpinompimpi_prefixnompi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpinompimpi_prefixnompi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_version12.9mpinompimpi_prefixnompi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_mpiopenmpimpi_prefixmpi_openmpi</td>
+              <td>linux_64_cuda_compiler_version12.9mpiopenmpimpi_prefixmpi_openmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_mpiopenmpimpi_prefixmpi_openmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_version12.9mpiopenmpimpi_prefixmpi_openmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_mpimpichmpi_prefixmpi_mpich</td>
+              <td>linux_64_cuda_compiler_versionNonempimpichmpi_prefixmpi_mpich</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_mpimpichmpi_prefixmpi_mpich" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_versionNonempimpichmpi_prefixmpi_mpich" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_mpinompimpi_prefixnompi</td>
+              <td>linux_64_cuda_compiler_versionNonempinompimpi_prefixnompi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_mpinompimpi_prefixnompi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_versionNonempinompimpi_prefixnompi" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_mpiopenmpimpi_prefixmpi_openmpi</td>
+              <td>linux_64_cuda_compiler_versionNonempiopenmpimpi_prefixmpi_openmpi</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_mpiopenmpimpi_prefixmpi_openmpi" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_versionNonempiopenmpimpi_prefixmpi_openmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_cuda_compiler_version12.9mpimpichmpi_prefixmpi_mpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_version12.9mpimpichmpi_prefixmpi_mpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_cuda_compiler_version12.9mpinompimpi_prefixnompi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_version12.9mpinompimpi_prefixnompi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_cuda_compiler_version12.9mpiopenmpimpi_prefixmpi_openmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_version12.9mpiopenmpimpi_prefixmpi_openmpi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_cuda_compiler_versionNonempimpichmpi_prefixmpi_mpich</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_versionNonempimpichmpi_prefixmpi_mpich" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_cuda_compiler_versionNonempinompimpi_prefixnompi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_versionNonempinompimpi_prefixnompi" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_cuda_compiler_versionNonempiopenmpimpi_prefixmpi_openmpi</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27034&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gauxc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_versionNonempiopenmpimpi_prefixmpi_openmpi" alt="variant">
                 </a>
               </td>
             </tr><tr>
