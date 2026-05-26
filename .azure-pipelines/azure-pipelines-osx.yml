@@ -5,24 +5,38 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-15
+    vmImage: $(VMIMAGE)
   strategy:
     matrix:
       osx_64_mpimpichmpi_prefixmpi_mpich:
         CONFIG: osx_64_mpimpichmpi_prefixmpi_mpich
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
+        store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_mpinompimpi_prefixnompi:
         CONFIG: osx_64_mpinompimpi_prefixnompi
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
+        store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
       osx_64_mpiopenmpimpi_prefixmpi_openmpi:
         CONFIG: osx_64_mpiopenmpimpi_prefixmpi_openmpi
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
+        store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
   timeoutInMinutes: 360
   variables: {}
 
   steps:
   # TODO: Fast finish on azure pipelines?
   - script: |
+      export MINIFORGE_HOME=$(tools_install_dir)
+      export CONDA_BLD_PATH=$(build_workspace_dir)
       export CI=azure
       export flow_run_id=azure_$(Build.BuildNumber).$(System.JobAttempt)
       export remote_url=$(Build.Repository.Uri)
