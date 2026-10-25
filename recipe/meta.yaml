@@ -20,7 +20,8 @@ source:
 {% endif %}
 build:
   number: {{ build }}
-  skip: true  # [win]
+  #skip: true  # [win]
+  skip: true  # [not (linux and x86_64)]
 
   string: cuda{{ cuda_compiler_version | replace('.', '') }}_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version != "None"]
   string: cpu_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version == "None"]
@@ -55,6 +56,7 @@ requirements:
     - llvm-openmp  # [osx]
     - magma          # [cuda_compiler_version != "None"]
     - libcublas-dev  # [cuda_compiler_version != "None"]
+    - libcusparse-dev  # [cuda_compiler_version != "None"]
     - {{ mpi }}  # [mpi != "nompi"]
   run:
     - llvm-openmp  # [osx]
