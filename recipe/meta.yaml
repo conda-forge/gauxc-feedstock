@@ -57,6 +57,7 @@ requirements:
     - magma          # [cuda_compiler_version != "None"]
     - libcublas-dev  # [cuda_compiler_version != "None"]
     - libcusparse-dev  # [cuda_compiler_version != "None"]
+    - cuda-cudart-dev  # [cuda_compiler_version != "None"]
     - {{ mpi }}  # [mpi != "nompi"]
   run:
     - llvm-openmp  # [osx]
