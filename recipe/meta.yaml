@@ -27,9 +27,10 @@ build:
   string: cpu_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version == "None"]
 
   run_exports:
-    - {{ pin_subpackage("gauxc", max_pin='x.x') }} *_{{ mpi_prefix }}_*
-    - {{ pin_subpackage("gauxc", max_pin='x.x') }} cuda{{ cuda_compiler_version | replace('.', '') }}_*  # [cuda_compiler_version != "None"]
-    - {{ pin_subpackage("gauxc", max_pin='x.x') }} cpu_*  # [cuda_compiler_version == "None"]
+    - {{ pin_subpackage("gauxc", max_pin='x.x') }}
+    - gauxc * *_{{ mpi_prefix }}_*
+    - gauxc * cuda{{ cuda_compiler_version | replace('.', '') }}_*  # [cuda_compiler_version != "None"]
+    - gauxc * cpu_*  # [cuda_compiler_version == "None"]
   ignore_run_exports:
     - catch2
 
