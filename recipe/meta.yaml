@@ -55,7 +55,7 @@ requirements:
     - libblas  # [linux]
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
-    - magma          # [cuda_compiler_version != "None"]
+    - libmagma-devel   # [cuda_compiler_version != "None"]
     - libcublas-dev  # [cuda_compiler_version != "None"]
     - libcusparse-dev  # [cuda_compiler_version != "None"]
     - cuda-cudart-dev  # [cuda_compiler_version != "None"]
