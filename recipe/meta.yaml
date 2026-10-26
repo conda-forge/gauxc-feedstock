@@ -20,8 +20,7 @@ source:
 {% endif %}
 build:
   number: {{ build }}
-  #skip: true  # [win]
-  skip: true  # [not (linux and x86_64)]
+  skip: true  # [win]
 
   string: cuda{{ cuda_compiler_version | replace('.', '') }}_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version != "None"]
   string: cpu_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version == "None"]
