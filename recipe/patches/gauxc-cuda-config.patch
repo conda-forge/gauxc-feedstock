@@ -1,0 +1,39 @@
+diff --git a/cmake/gauxc-config.cmake.in b/cmake/gauxc-config.cmake.in
+index 50230f9..e2aea16 100644
+--- a/cmake/gauxc-config.cmake.in
++++ b/cmake/gauxc-config.cmake.in
+@@ -46,8 +46,17 @@ if( GAUXC_HAS_HOST )
+ endif()
+
+ if( GAUXC_HAS_CUDA )
+-  enable_language( CUDA )
+-  find_dependency( CUDAToolkit @CUDAToolkit_VERSION@ EXACT )
++  # Consumers only link the CUDA libraries, so they need the toolkit but not the CUDA language.
++  # Any toolkit of the same major version is ABI compatible with the one GauXC was built with.
++  find_dependency( CUDAToolkit )
++  if( NOT CUDAToolkit_VERSION_MAJOR EQUAL @CUDAToolkit_VERSION_MAJOR@ )
++    set( ${CMAKE_FIND_PACKAGE_NAME}_FOUND FALSE )
++    set( ${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE
++      "GauXC was built with CUDA @CUDAToolkit_VERSION@, but CUDA ${CUDAToolkit_VERSION} was found. The major versions must match." )
++    list(REMOVE_AT CMAKE_MODULE_PATH 0)
++    list(REMOVE_AT CMAKE_MODULE_PATH 0)
++    return()
++  endif()
+   if( GAUXC_HAS_MAGMA )
+     find_dependency( MAGMA )
+   endif()
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 6196892..06779a5 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -231,6 +231,10 @@ write_basic_package_version_file(
+   COMPATIBILITY AnyNewerVersion
+ )
+
++# CUDAToolkit is found in device subdirectories, so its version isn't visible here otherwise
++if( GAUXC_HAS_CUDA )
++  find_package( CUDAToolkit REQUIRED )
++endif()
+
+ # Setup gauxc-config.cmake
+ configure_package_config_file(

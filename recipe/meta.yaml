@@ -1,5 +1,5 @@
 {% set version = "1.1" %}
-{% set build = 7 %}
+{% set build = 8 %}
 {% set mpi = mpi or "nompi" %}
 
 package:
@@ -11,6 +11,7 @@ source:
     sha256: 17de077fb23e44d03b0ed14dcd8117c01e5b3431fbefa2352d751639ada7f91c
     patches:
       - patches/gh-161.patch  # Allow finding highfive library
+      - patches/gauxc-cuda-config.patch  # Allow linking against only CUDAToolkit
   - url: https://github.com/wavefunction91/linalg-cmake-modules/archive/9d2c273a671d6811e9fd432f6a4fa3d915b144b8.tar.gz
     sha256: 6e49c6c7c7df14b956d1fee77d9b6aad9ded3210cd639133c69a52b2e5ce4eae
     folder: external/linalg-cmake-modules
@@ -26,10 +27,10 @@ build:
   string: cpu_{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}  # [cuda_compiler_version == "None"]
 
   run_exports:
-    - {{ pin_subpackage("gauxc", max_pin='x.x') }}
-    - gauxc * *_{{ mpi_prefix }}_*
-    - gauxc * cuda{{ cuda_compiler_version | replace('.', '') }}_*  # [cuda_compiler_version != "None"]
-    - gauxc * cpu_*  # [cuda_compiler_version == "None"]
+    # linter gives false positive about gauxc not a subpackage, but multi-line separation of version & bldstring
+    #    has its own bug consolidating at consumption-time (invalid character ^). Live with the lint
+    - {{ pin_subpackage("gauxc", max_pin='x.x') }} cpu_{{ mpi_prefix }}_*  # [cuda_compiler_version == "None"]
+    - {{ pin_subpackage("gauxc", max_pin='x.x') }} cuda{{ cuda_compiler_version | replace('.', '') }}_{{ mpi_prefix }}_*  # [cuda_compiler_version != "None"]
   ignore_run_exports:
     - catch2
 
